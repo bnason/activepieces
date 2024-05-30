@@ -377,6 +377,9 @@
       "@activepieces/piece-openai": [
         "packages/pieces/community/openai/src/index.ts"
       ],
+      "@activepieces/piece-oracledb": [
+        "packages/pieces/community/oracledb/src/index.ts"
+      ],
       "@activepieces/piece-pastebin": [
         "packages/pieces/community/pastebin/src/index.ts"
       ],

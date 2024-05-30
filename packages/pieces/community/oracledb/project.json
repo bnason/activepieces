@@ -1,0 +1,38 @@
+{
+  "name": "pieces-oracledb",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/pieces/community/oracledb/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/pieces/community/oracledb",
+        "tsConfig": "packages/pieces/community/oracledb/tsconfig.lib.json",
+        "packageJson": "packages/pieces/community/oracledb/package.json",
+        "main": "packages/pieces/community/oracledb/src/index.ts",
+        "assets": [
+          "packages/pieces/community/oracledb/*.md"
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs pieces-oracledb {args.ver} {args.tag}",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  },
+  "tags": []
+}
